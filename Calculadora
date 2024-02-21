@@ -1,0 +1,137 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace calculadora
+{
+    public partial class Calculadora : Form
+    {
+        public Calculadora()
+        {
+            InitializeComponent();
+        }
+
+        string CalcTotal;
+        int num1;
+        int num2;
+        String option;
+        int result;
+
+        private void btn_n1_Click(object sender, EventArgs e)
+        {
+            txt_valores.Text += "1";
+        }
+
+        private void btn_n2_Click(object sender, EventArgs e)
+        {
+            txt_valores.Text += "2";
+        }
+
+        private void btn_n3_Click(object sender, EventArgs e)
+        {
+            txt_valores.Text += "3";
+        }
+
+        private void btn_n4_Click(object sender, EventArgs e)
+        {
+            txt_valores.Text += "4";
+        }
+
+        private void btn_n5_Click(object sender, EventArgs e)
+        {
+            txt_valores.Text += "5";
+        }
+
+        private void btn_n6_Click(object sender, EventArgs e)
+        {
+            txt_valores.Text += "6";
+        }
+
+        private void btn_n7_Click(object sender, EventArgs e)
+        {
+            txt_valores.Text += "7";
+        }
+
+        private void btn_n8_Click(object sender, EventArgs e)
+        {
+            txt_valores.Text += "8";
+        }
+
+        private void btn_n9_Click(object sender, EventArgs e)
+        {
+            txt_valores.Text += "9";
+        }
+
+        private void btn_n0_Click(object sender, EventArgs e)
+        {
+            txt_valores.Text += "0";
+        }
+
+        private void btn_mult_Click(object sender, EventArgs e)
+        {
+            option = "*";
+            num1 = int.Parse(txt_valores.Text);
+
+            txt_valores.Clear();
+        }
+
+        private void btn_div_Click(object sender, EventArgs e)
+        {
+            option = "/" ;
+            num1 = int.Parse(txt_valores.Text);
+
+            txt_valores.Clear();
+        }
+
+        private void btn_soma_Click(object sender, EventArgs e)
+        {
+            option = "+";
+            num1 = int.Parse(txt_valores.Text);
+
+            txt_valores.Clear();
+        }
+
+        private void btn_subtracao_Click(object sender, EventArgs e)
+        {
+            option = "-";
+            num1 = int.Parse(txt_valores.Text);
+            
+            txt_valores.Clear();
+        }
+
+        private void btn_result_Click(object sender, EventArgs e)
+        {
+           
+            num2 = int.Parse(txt_valores.Text);
+
+            if (option == ("*"))
+                result = num1 * num2;
+
+            if (option == ("+"))
+                result = num1 + num2;
+
+            if (option == ("-"))
+                result = num1 - num2;
+
+            if (option == ("/"))
+                result = num1 / num2;
+
+            txt_valores.Text = result + "";
+          
+
+        }
+
+        private void btn_limpar_Click(object sender, EventArgs e)
+        {
+            txt_valores.Clear();
+            txt_valores.Focus();
+        }
+
+    }
+}
